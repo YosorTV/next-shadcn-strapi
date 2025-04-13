@@ -1,4 +1,4 @@
-export const SITE_NAME = 'SAUDI ENERGY';
+export const SITE_NAME = 'MIRACLE';
 
 export const DEFAULT_LOCALE = 'en';
 export const LOCALES_PREFIX = 'always';
