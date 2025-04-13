@@ -2,8 +2,8 @@ import { FC } from 'react';
 
 import Logo from '@/components/elements/logo';
 import { IHeader } from '@/lib/interfaces/units/header';
-import ThemeChanger from '@/units/theme-changer';
 import LangChanger from '@/units/lang-changer';
+import ThemeChanger from '@/units/theme-changer';
 
 const Header: FC<IHeader> = () => {
   return (

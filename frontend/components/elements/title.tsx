@@ -4,7 +4,7 @@ import { ITitle, ITitleSizes, THeadingTag } from '@/lib/interfaces/elements/titl
 import { cn } from '@/lib/packages/cn';
 import titleVariants from '@/lib/packages/tailwind.variants';
 
-export const Title: FC<PropsWithChildren<ITitle>> = ({ level, className, children, variant, size, ...rest }) => {
+const Title: FC<PropsWithChildren<ITitle>> = ({ level, className, children, variant, size, ...rest }) => {
   if (!children) return null;
 
   const HeadingTag = `h${level}` as THeadingTag;
@@ -36,3 +36,5 @@ export const Title: FC<PropsWithChildren<ITitle>> = ({ level, className, childre
     </HeadingTag>
   );
 };
+
+export default Title;

@@ -1,14 +1,22 @@
-import { LOCALES } from '@/lib/constants/locales';
+'use client';
+
 import { useLocale as useIntlLocale } from 'next-intl';
-import { useRouter } from '../packages/i18n';
+
+import { LOCALES } from '@/lib/constants/locales';
+import { redirect, usePathname } from '@/lib/packages/i18n';
 
 const useLocale = () => {
   const locale = useIntlLocale();
-  const { push } = useRouter();
+  const pathname = usePathname();
 
-  const locales = LOCALES.map((locale) => ({
-    label: locale,
-    onClick: () => push(locale),
+  const locales = LOCALES.map((lang) => ({
+    label: lang,
+    onClick: () => {
+      redirect({
+        locale: lang,
+        href: pathname,
+      });
+    },
   }));
 
   return { locales, locale };

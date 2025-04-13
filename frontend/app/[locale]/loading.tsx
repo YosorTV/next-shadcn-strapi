@@ -1,8 +1,10 @@
 'use client';
 
-import { Progress } from '@/components/elements/progress';
-import { usePathname, useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
+
+import { usePathname, useSearchParams } from 'next/navigation';
+
+import Progress from '@/components/elements/progress';
 
 export default function Loading() {
   const [progress, setProgress] = useState(0);
@@ -18,6 +20,7 @@ export default function Loading() {
             clearInterval(timer);
             return prev;
           }
+
           return prev + 10;
         });
       }, 100);

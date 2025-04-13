@@ -1,11 +1,11 @@
 import { FC } from 'react';
 
+import { montserrat } from '@/assets/fonts';
 import Providers from '@/components/common/Providers';
 import Footer from '@/components/units/footer';
 import Header from '@/components/units/header';
 import { TRootLayout } from '@/lib/interfaces/layouts';
 import { cn } from '@/lib/packages/cn';
-import { montserrat } from '@/assets/fonts';
 
 const RootLayout: FC<TRootLayout> = ({ children, locale, messages }) => {
   return (

@@ -4,6 +4,7 @@ import PageLayout from '@/components/layouts/page';
 import ComingSoon from '@/components/modules/coming-soon';
 import { SITE_NAME } from '@/lib/constants/locales';
 import { Ti18NParams } from '@/lib/interfaces/layouts';
+import getEntityAction from '@/services/actions/common/getEntityAction';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -14,12 +15,14 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default async function Home({ params }: Ti18NParams) {
-  const { locale } = await params;
+export default async function CatchAllPage({ params }: Ti18NParams) {
+  const { locale, slug } = await params;
+
+  const data = await getEntityAction(slug, locale);
 
   return (
     <PageLayout locale={locale} className='justify-end'>
-      <ComingSoon />
+      <ComingSoon data={data} />
     </PageLayout>
   );
 }

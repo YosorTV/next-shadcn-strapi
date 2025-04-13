@@ -7,7 +7,7 @@ import { motion, useInView } from 'motion/react';
 import revealAnimation from '@/assets/animations/reveal';
 import { IAnimatedTag, TMotionTag } from '@/lib/interfaces/elements/animatedTag';
 
-export const AnimatedTag: FC<PropsWithChildren<IAnimatedTag>> = ({ children, tag = 'div', ...props }) => {
+const AnimatedTag: FC<PropsWithChildren<IAnimatedTag>> = ({ children, tag = 'div', ...props }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
@@ -19,3 +19,5 @@ export const AnimatedTag: FC<PropsWithChildren<IAnimatedTag>> = ({ children, tag
     </MotionTag>
   );
 };
+
+export default AnimatedTag;

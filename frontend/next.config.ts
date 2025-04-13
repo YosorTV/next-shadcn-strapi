@@ -24,7 +24,7 @@ const headers = [
 
 const nextConfig: NextConfig = {
   images: {
-    domains: ['localhost'],
+    domains: ['localhost', 'strapi.com'],
     formats: ['image/avif', 'image/webp'],
   },
   reactStrictMode: false,
@@ -38,29 +38,26 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  experimental: {
-    optimizePackageImports: ['framer-motion'],
-    turbo: {
-      rules: {
-        '*.svg': {
-          loaders: ['@svgr/webpack'],
-          as: '*.js',
-        },
-        '*.mp4': {
-          loaders: ['file-loader'],
-          as: '*.js',
-        },
-        '*.webm': {
-          loaders: ['file-loader'],
-          as: '*.js',
-        },
-        '*.mov': {
-          loaders: ['file-loader'],
-          as: '*.js',
-        },
+  turbopack: {
+    rules: {
+      '*.svg': {
+        loaders: ['@svgr/webpack'],
+        as: '*.js',
       },
-      resolveExtensions: ['.mdx', '.tsx', '.ts', '.jsx', '.js', '.json', '.mp4', '.webm', '.mov'],
+      '*.mp4': {
+        loaders: ['file-loader'],
+        as: '*.js',
+      },
+      '*.webm': {
+        loaders: ['file-loader'],
+        as: '*.js',
+      },
+      '*.mov': {
+        loaders: ['file-loader'],
+        as: '*.js',
+      },
     },
+    resolveExtensions: ['.mdx', '.tsx', '.ts', '.jsx', '.js', '.json', '.mp4', '.webm', '.mov'],
   },
 };
 

@@ -2,13 +2,13 @@
 
 import { FC } from 'react';
 
+import { Button } from '@/components/elements/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/elements/dropdown-menu';
-import { Button } from '@/components/elements/button';
 import { IDropdown } from '@/lib/interfaces/elements/dropdown';
 
 const Dropdown: FC<IDropdown> = ({
@@ -27,6 +27,7 @@ const Dropdown: FC<IDropdown> = ({
       </DropdownMenuTrigger>
       <DropdownMenuContent align={align} className='uppercase'>
         {menuItems.map((item, index) => (
+          // eslint-disable-next-line react/no-array-index-key
           <DropdownMenuItem key={index} onClick={item.onClick}>
             {item.label}
           </DropdownMenuItem>
