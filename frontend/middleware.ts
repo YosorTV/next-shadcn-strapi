@@ -15,6 +15,14 @@ export default function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
+  if (pathname === '/en') {
+    return NextResponse.redirect(new URL('/en/coming-soon', request.url));
+  }
+
+  if (pathname === '/uk') {
+    return NextResponse.redirect(new URL('/uk/coming-soon', request.url));
+  }
+
   return createIntlMiddleware(routing)(request);
 }
 
