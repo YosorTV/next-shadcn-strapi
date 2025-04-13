@@ -1,0 +1,11 @@
+{
+  "comingSoon": {
+    "title": "Coming Soon...",
+    "description-part-1": "In the meantime, feel free to reach out to us at",
+    "description-part-2": "for any inquiries."
+  },
+  "notFound": {
+    "message": "Oops! The page you are looking for does not exist",
+    "return": "Return to home page"
+  }
+}

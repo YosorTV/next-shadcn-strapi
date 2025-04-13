@@ -1,0 +1,6 @@
+.next
+.vercel
+pnpm-lock.yaml
+next.config.ts
+___*
+/.cursor/
